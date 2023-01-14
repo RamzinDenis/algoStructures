@@ -7,8 +7,8 @@ class Node {
 
 class LinkedList {
   constructor() {
-    this.head = 0;
-    this.tail = 0;
+    this.head = null;
+    this.tail = null;
     this.length = 0;
   }
 
@@ -74,7 +74,7 @@ class LinkedList {
   }
 
   get(n) {
-    if (n < 0 || n > this.length) return null;
+    if (n < 0 || n >= this.length) return null;
 
     let cur = this.head;
 
@@ -97,7 +97,7 @@ class LinkedList {
   }
 
   insert(n, val) {
-    if (n < 0 || n > this.length - 1) return false;
+    if (n < 0 || n > this.length) return false;
 
     if (n === this.length) return !!this.push(val);
     if (n === 0) return !!this.unshift(val);
